@@ -1,7 +1,7 @@
 {
   "name": "simple-date-utils",
   "author": "Chau Tran",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "license": "MIT",
   "module": "dist/simple-date-utils.esm.js",
   "main": "dist/index.js",
@@ -19,7 +19,8 @@
     "test": "tsdx test",
     "lint": "tsdx lint",
     "prepare": "tsdx build",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "husky": {
     "hooks": {
@@ -39,11 +40,16 @@
     "husky": "^4.2.3",
     "tsdx": "^0.13.0",
     "tslib": "^1.11.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "semantic-release": "^17.0.4"
   },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nartc/simple-date-utils.git"
   }
 }

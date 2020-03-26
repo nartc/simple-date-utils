@@ -1,0 +1,24 @@
+language: node_js
+cache:
+  directories:
+    - ~/.npm
+notifications:
+  email: false
+node_js:
+  - '11'
+  - '12'
+script:
+  - npm run test
+
+jobs:
+  include:
+    - stage: Production
+      name: npm_release
+      node_js: '12'
+      before_script:
+        - npm run build
+      if: (branch = master) AND env(TRAVIS_PULL_REQUEST) IS false
+      script: yarn semantic-release
+branches:
+  except:
+    - /^v\d+\.\d+\.\d+$/
